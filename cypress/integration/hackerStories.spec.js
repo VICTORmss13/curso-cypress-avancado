@@ -123,7 +123,7 @@ describe('Hacker Stories', () => {
         .should('be.visible')
     })
 
-    it.only('types and submits the form directly', () => {
+    it('types and submits the form directly', () => {
       cy.get('#search')
         .type(newTerm)
       cy.get('form').submit()
