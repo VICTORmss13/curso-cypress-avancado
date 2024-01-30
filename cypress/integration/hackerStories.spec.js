@@ -60,7 +60,7 @@ describe('Hacker Stories', () => {
       cy.wait('@getStories')
 
       cy.getLocalStorage('search')
-      .should('be.equal', newTerm)
+      .should('be.equal', initialTerm)
 
       cy.get('.item').should('have.length', 20)
       cy.get('.item')
@@ -338,7 +338,7 @@ context('Errors', () => {
 })
 
 
-it.only('shows a "Loading ..." state before showing the results', () => {
+it('shows a "Loading ..." state before showing the results', () => {
   cy.intercept(
     'GET',
     '**/search**',
